@@ -7,6 +7,10 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import Profile from './Profile.js';
+import BestBooks from './BestBooks.js';
+import axios from 'axios';
+
 
 class App extends React.Component {
 
@@ -36,7 +40,8 @@ class App extends React.Component {
           <Header user={this.state.user} onLogout={this.logoutHandler} />
           <Switch>
             <Route exact path="/">
-              {/* TODO: if the user is logged in, render the `BestBooks` component, if they are not, render the `Login` component */}
+              {/*DONE TODO: if the user is logged in, render the `BestBooks` component, if they are not, render the `Login` component */}
+              {this.state.user && <BestBooks />}
             </Route>
             <Route exact path='/profile'>
               <Profile />
