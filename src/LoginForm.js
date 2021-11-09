@@ -1,6 +1,5 @@
 import { Component } from "react";
 import Form from 'react-bootstrap/Form';
-import LoginButton from './LoginButton.js';
 
 class LoginForm extends Component {
   constructor(props){
@@ -37,7 +36,7 @@ class LoginForm extends Component {
     <Form.Text className="text-muted">
       We'll never share your email with anyone else.
     </Form.Text>
-    <LoginButton /> 
+    <button onClick={this.handleClick}>Log In</button>
 </Form>
     );
   }
