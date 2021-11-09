@@ -11,7 +11,8 @@ class BestBooks extends React.Component {
   }
 
   getBooks = async () => {
-    let apiUrl= 'http://localhost:3001/books'
+    let apiUrl= `${process.env.REACT_APP_SERVER_URL}/books?email=${this.props.user}`
+    console.log(apiUrl);
      
 try{
   const response = await axios.get(apiUrl);
@@ -41,8 +42,9 @@ try{
                   {/* <img style= {{margin: 'auto'}} alt='carousel item' src={``}/>  */}
                   <Carousel.Caption>
                   <div style={{overflow: 'scroll', height: '100px'}}>
-                    <h3 style={{color: 'white'}}>{book.title}</h3>
-                    <p style={{color: 'white'}}>{book.author}</p>
+                    <h3 style={{color: 'black'}}>{book.title}</h3>
+                    <h4 style={{color: 'black'}}>{book.author}</h4>
+                    <p style={{color: 'black'}}>{book.description}</p>
                   </div>
                   </Carousel.Caption> 
               </Carousel.Item>   

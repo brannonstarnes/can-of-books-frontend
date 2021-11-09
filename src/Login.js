@@ -13,7 +13,7 @@ class Login extends React.Component {
             Click Below to Log In
           </Card.Text>
           {/*DONE TODO: add a `LoginButton` component here that will log the user in */}
-          <LoginButton />
+          <LoginButton loginHandler={this.props.loginHandler} />
         </Card.Body>
       </Card>
     )

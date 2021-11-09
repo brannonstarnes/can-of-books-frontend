@@ -3,23 +3,37 @@ import Form from 'react-bootstrap/Form';
 import LoginButton from './LoginButton.js';
 
 class LoginForm extends Component {
-
-showForm = () => {
+  constructor(props){
+    super(props)
+    this.state = {
+      user: '',
+      username: ''
+    }
+  }
   
-}
+  handleClick = () => {
+    this.props.loginHandler(this.state.user, this.state.username);
+  }
 
+  handleChange = (e) => {
+    this.setState({user: e.target.value})
+  }
+
+  handleUserNameChange = (e) =>{
+    this.setState({username: e.target.value})
+  }
 
   render() {
-    /* TODO: create a simple login form that collects username and and email, and lets parent component know when form has been submitted */
+    /* DONE TODO: create a simple login form that collects username and and email, and lets parent component know when form has been submitted */
     return (
       <Form>
   <Form.Group className="mb-3" >
     <Form.Label>Username</Form.Label>
-    <Form.Control type="text" placeholder="Enter Username" />
+    <Form.Control type="text" placeholder="Enter Username" onChange={this.handleUserNameChange}/>
   </Form.Group>
 
   <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" />
+    <Form.Control type="email" placeholder="Enter email" onChange={this.handleChange} />
     <Form.Text className="text-muted">
       We'll never share your email with anyone else.
     </Form.Text>
