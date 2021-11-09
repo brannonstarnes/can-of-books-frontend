@@ -45,7 +45,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/">
               {/*DONE TODO: if the user is logged in, render the `BestBooks` component, if they are not, render the `Login` component */}
-              {this.state.user ?<BestBooks /> : <Login loginHandler={this.loginHandler} />}
+              {this.state.user ?<BestBooks user={this.state.user} /> : <Login loginHandler={this.loginHandler} />}
             </Route>
             <Route exact path="/profile">
               {this.state.user ? <Profile user={this.state.user} username={this.state.username}/> : <Login loginHandler={this.loginHandler} />}
