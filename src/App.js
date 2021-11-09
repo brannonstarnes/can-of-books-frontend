@@ -9,7 +9,6 @@ import {
 } from "react-router-dom";
 import Profile from './Profile.js';
 import BestBooks from './BestBooks.js';
-import axios from 'axios';
 
 
 class App extends React.Component {

@@ -28,7 +28,7 @@ try{
 
   render() {
 
-    /* TODO: render user's books in a Carousel */
+    /*DONE? TODO: render user's books in a Carousel */
 
     return (
       <>
@@ -41,8 +41,8 @@ try{
                   {/* <img style= {{margin: 'auto'}} alt='carousel item' src={``}/>  */}
                   <Carousel.Caption>
                   <div style={{overflow: 'scroll', height: '100px'}}>
-                    <h3 style={{color: 'black'}}>{book.title}</h3>
-                    <p style={{color: 'black'}}>{book.author}</p>
+                    <h3 style={{color: 'white'}}>{book.title}</h3>
+                    <p style={{color: 'white'}}>{book.author}</p>
                   </div>
                   </Carousel.Caption> 
               </Carousel.Item>   
