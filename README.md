@@ -1,3 +1,30 @@
+# Can of Books
+
+**Author**: Brannon Starnes and Joseph Hernandez
+**Version**: 1.0.1 (increment the patch/fix version number if you make more commits past your first submission)
+
+## Overview
+<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+
+## Getting Started
+<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+
+## Architecture
+<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+
+## Change Log
+<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
+
+01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+
+## Estimates
+<!-- See below -->
+
+## Credit and Collaborations
+<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+
+
+
 # Start your own "Can of Books" App
 
 This repository has starter code to begin work on creating your own online bookshelf.
@@ -45,3 +72,13 @@ Clone this repo to your own account with the green "Use this template" button. T
   - We will talk candidly to each other about the situation if one of us is feeling that the other is taking over. 
 3. How will you approach each other and the challenge of building an application knowing that it is impossible for two people to be at the exact same place in understanding and skill level?
   - We are commited to being patient and helping each other to gain an understanding of the material to the best of our abilities. 
+
+Name of feature: Login and Paths
+
+Estimate of time needed to complete: 4 hours
+
+Start time: 5:30
+
+Finish time: 9:30
+
+Actual time needed to complete: 4
