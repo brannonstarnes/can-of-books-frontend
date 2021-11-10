@@ -20,7 +20,8 @@ class App extends React.Component {
     this.state = {
       user: null,
       username: "",
-      books: []
+      books: [],
+      show: false
     }
   }
   async getBooks(location = null) {
@@ -52,6 +53,14 @@ class App extends React.Component {
     })
   }
 
+  showModal = () => {
+    this.setState({show: true})
+  }
+
+  closeModal = () => {
+    this.setState({show: false})
+  }
+
   render() {
     return (
       <>
@@ -60,13 +69,13 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/">
               {/*DONE TODO: if the user is logged in, render the `BestBooks` component, if they are not, render the `Login` component */}
-              {this.state.user ?<BestBooks user={this.state.user} /> : <Login loginHandler={this.loginHandler} />}
+              {this.state.user ?<BestBooks user={this.state.user} showModal={this.showModal}/> : <Login loginHandler={this.loginHandler} />}
             </Route>
             <Route exact path="/profile">
               {this.state.user ? <Profile user={this.state.user} username={this.state.username}/> : <Login loginHandler={this.loginHandler} />}
             </Route>
             <Route exact path='/createBooks'>
-              <CreateBook postBooks={this.postBooks} onCreate={this.handleBookCreate}/>
+              <CreateBook postBooks={this.postBooks} show={this.state.show} closeModal={this.closeModal}/>
             </Route>
           </Switch>
           <Footer />

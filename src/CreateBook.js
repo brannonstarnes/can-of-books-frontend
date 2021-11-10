@@ -1,7 +1,7 @@
 import {Component} from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-
+import Modal from 'react-bootstrap/Modal';
 export default class CreateBook extends Component {
 
 
@@ -13,28 +13,37 @@ export default class CreateBook extends Component {
         
         const newBook = { title: title, description: description, email: email };
         this.props.postBooks(newBook);
+        this.props.closeModal();
     }
 
     render(){
         return(
-            <Form onSubmit={this.handleSubmit}>
-              <Form.Group className="mb-3" controlId="formTitle">
-                <Form.Label>Title</Form.Label>
-                <Form.Control type="text" placeholder="Enter Title" onChange={this.handleUserNameChange}/>
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formDescription" >
-                <Form.Label>Description</Form.Label>
-                <Form.Control type="text" placeholder="Enter Description" onChange={this.handleUserNameChange}/>
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formEmail" >
-                <Form.Label>Email</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" onChange={this.handleChange} />
-                <Form.Text className="text-muted">
+            <Modal show={this.props.show} onHide={() => this.props.closeModal()}>
+              <Modal.Header closeButton>
+                <Modal.Title>Add A Book Here!</Modal.Title>
+              </Modal.Header>
+
+            <Modal.B>
+              <Form onSubmit={this.handleSubmit}>
+                <Form.Group className="mb-3" controlId="formTitle">
+                  <Form.Label>Title</Form.Label>
+                  <Form.Control type="text" placeholder="Enter Title" onChange={this.handleUserNameChange}/>
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formDescription" >
+                  <Form.Label>Description</Form.Label>
+                  <Form.Control type="text" placeholder="Enter Description" onChange={this.handleUserNameChange}/>
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formEmail" >
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control type="email" placeholder="Enter email" onChange={this.handleChange} />
+                  <Form.Text className="text-muted">
                   We'll never share your email with anyone else.
-                </Form.Text>
-              </Form.Group>
-               <Button variant="primary" type='submit' >Submit</Button>
-            </Form>
+                  </Form.Text>
+                </Form.Group>
+                 <Button variant="primary" type='submit' >Submit</Button>
+              </Form>
+             </Modal.B>
+            </Modal>           
         ) 
     }
 
