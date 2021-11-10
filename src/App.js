@@ -10,7 +10,8 @@ import {
 import Profile from './Profile.js';
 import BestBooks from './BestBooks.js';
 import Login from './Login.js';
-
+import CreateBook from './CreateBook.js';
+import axios from 'axios';
 
 class App extends React.Component {
 
@@ -18,9 +19,23 @@ class App extends React.Component {
     super(props);
     this.state = {
       user: null,
-      username: ""
+      username: "",
+      books: []
     }
   }
+  async getBooks(location = null) {
+
+  }
+  
+  //add books
+  postBooks = async (bookObj) => {
+    const url = `${process.env.REACT_APP_SERVER_URL}/books`;
+    let res = await axios.post(url, bookObj);
+    this.setState({book: [...this.state.books, res.data]});
+  }
+  
+  //delete books
+ 
 
   loginHandler = (email, name) => {
     this.setState({
@@ -49,6 +64,9 @@ class App extends React.Component {
             </Route>
             <Route exact path="/profile">
               {this.state.user ? <Profile user={this.state.user} username={this.state.username}/> : <Login loginHandler={this.loginHandler} />}
+            </Route>
+            <Route exact path='/createBooks'>
+              <CreateBook postBooks={this.postBooks} onCreate={this.handleBookCreate}/>
             </Route>
           </Switch>
           <Footer />
