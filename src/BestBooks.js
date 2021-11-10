@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import BookCarousel from './BookCarousel.js'
+import Button from 'react-bootstrap/Button';
 
 class BestBooks extends React.Component {
   constructor(props) {
@@ -9,6 +10,8 @@ class BestBooks extends React.Component {
       books: []
     }
   }
+ 
+
 
   getBooks = async () => {
     let apiUrl= `${process.env.REACT_APP_SERVER_URL}/books?email=${this.props.user}`
@@ -34,6 +37,12 @@ try{
     return (
       <>
         <h2>My Essential Lifelong Learning &amp; Formation Shelf</h2>
+
+        <Button onClick={() => this.props.showModal()}>
+          Add Book
+        </Button>
+
+
 
         {this.state.books.length > 0 ? (
           <BookCarousel books={this.state.books}/>
