@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import Carousel from 'react-bootstrap/Carousel'
+import BookCarousel from './BookCarousel.js'
 
 class BestBooks extends React.Component {
   constructor(props) {
@@ -36,20 +36,8 @@ try{
         <h2>My Essential Lifelong Learning &amp; Formation Shelf</h2>
 
         {this.state.books.length > 0 ? (
-          <Carousel>
-          {this.state.books.map((book) => 
-              <Carousel.Item>
-                  {/* <img style= {{margin: 'auto'}} alt='carousel item' src={``}/>  */}
-                  <Carousel.Caption>
-                  <div style={{overflow: 'scroll', height: '100px'}}>
-                    <h3 style={{color: 'black'}}>{book.title}</h3>
-                    <h4 style={{color: 'black'}}>{book.author}</h4>
-                    <p style={{color: 'black'}}>{book.description}</p>
-                  </div>
-                  </Carousel.Caption> 
-              </Carousel.Item>   
-                )}
-              </Carousel>
+          <BookCarousel books={this.state.books}/>
+
         ) : (
           <h3>No Books Found :(</h3>
         )}
