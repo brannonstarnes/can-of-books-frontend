@@ -2,6 +2,7 @@ import {Component} from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+
 export default class CreateBook extends Component {
 
 
@@ -23,7 +24,7 @@ export default class CreateBook extends Component {
                 <Modal.Title>Add A Book Here!</Modal.Title>
               </Modal.Header>
 
-            <Modal.B>
+            <Modal.Body>
               <Form onSubmit={this.handleSubmit}>
                 <Form.Group className="mb-3" controlId="formTitle">
                   <Form.Label>Title</Form.Label>
@@ -42,7 +43,7 @@ export default class CreateBook extends Component {
                 </Form.Group>
                  <Button variant="primary" type='submit' >Submit</Button>
               </Form>
-             </Modal.B>
+             </Modal.Body>
             </Modal>           
         ) 
     }
