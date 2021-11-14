@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Profile from "./Profile.js";
 import BestBooks from "./BestBooks.js";
 import Login from "./Login.js";
+import "./css/app.css";
 
 class App extends React.Component {
   constructor(props) {
