@@ -9,10 +9,11 @@ class LoginForm extends Component {
       username: "",
     };
   }
+  
+  // handleClick = () => {
+  //   this.props.loginHandler(this.state.user, this.state.username);
+  // }
 
-  handleClick = () => {
-    this.props.loginHandler(this.state.user, this.state.username);
-  };
 
   handleChange = (e) => {
     this.setState({ user: e.target.value });
