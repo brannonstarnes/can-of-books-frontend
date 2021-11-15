@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { withAuth0 } from "@auth0/auth0-react";
 
 class Profile extends Component {
 
@@ -8,10 +9,10 @@ class Profile extends Component {
     /* STRETCH TODO: if no logged in user then redirect home */
     return  (
     <div>
-      <p>Username: {this.props.username}</p>
-      <p>Email: {this.props.user}</p>
+      <p>Username: {this.props.auth0.username}</p>
+      <p>Email: {this.props.auth0.user}</p>
     </div>
     )}
 };
 
-export default Profile;
+export default withAuth0(Profile);

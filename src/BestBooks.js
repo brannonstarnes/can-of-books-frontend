@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import BookCarousel from './BookCarousel.js'
 import Button from 'react-bootstrap/Button';
+import { withAuth0 } from '@auth0/auth0-react'
 
 class BestBooks extends React.Component {
   constructor(props) {
@@ -55,4 +56,4 @@ try{
   }
 }
 
-export default BestBooks;
+export default withAuth0(BestBooks);
