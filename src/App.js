@@ -30,15 +30,9 @@ class App extends React.Component {
 
 //   }
   
-  //add books
-  postBooks = async (bookObj) => {
-    const url = `${process.env.REACT_APP_SERVER_URL}/books`;
-    let res = await axios.post(url, bookObj);
-    this.setState({book: [...this.state.books, res.data]});
-  }
-  
-  //delete books
- 
+//add books
+
+//delete books
 
 //   loginHandler = (email, name) => {
 //     this.setState({
