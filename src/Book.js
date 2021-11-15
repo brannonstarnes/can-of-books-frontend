@@ -9,13 +9,15 @@ export default class Book extends Component {
       <>
         <img
           width="50%"
-          height="400px"
+          height="420px"
           className="d-block w-100"
           src="https://images.unsplash.com/photo-1585862705417-671ae64f0eb7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80"
           alt={this.props.book.title}
         />
         <Carousel.Caption>
-          <h1>{this.props.book.title}</h1>
+          <h1>
+            <i>{this.props.book.title}</i>
+          </h1>
           <blockquote>
             <h2>{this.props.book.description}</h2>
           </blockquote>
